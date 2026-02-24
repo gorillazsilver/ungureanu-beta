@@ -24,10 +24,10 @@ const config: Config = {
       },
 
       fontFamily: {
-        "stint-ultra-expanded": ['"Stint Ultra Expanded"', "sans-serif"],
-        "pontano-sans": ['"Pontano Sans"', "sans-serif"],
-        "luxurious-script": ['"Luxurious Script"', "cursive"],
-        "familjen-grotesk": ['"Familjen Grotesk"', "sans-serif"],
+        "stint-ultra-expanded": ["var(--font-stint-ultra-expanded)"],
+        "pontano-sans": ["var(--font-pontano-sans)"],
+        "luxurious-script": ["var(--font-luxurious-script)"],
+        "familjen-grotesk": ["var(--font-familjen-grotesk)"],
       },
     },
   },

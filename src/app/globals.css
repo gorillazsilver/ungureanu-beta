@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-stint-ultra-expanded: "Stint Ultra Expanded", cursive;
-  --font-pontano-sans: "Pontano Sans", sans-serif;
-  --font-luxurious-script: "Luxurious Script", cursive;
-  --font-familjen-grotesk: "Familjen Grotesk", sans-serif;
-  --font-lobster: "Lobster", cursive;
-}
-
 /* Gallery slider */
 
 .slide {
@@ -118,7 +110,7 @@
 }
 
 .passions-conflict-regular {
-  font-family: "Passions Conflict", cursive;
+  font-family: var(--font-passions-conflict), cursive;
   font-weight: 400;
   font-style: normal;
 }

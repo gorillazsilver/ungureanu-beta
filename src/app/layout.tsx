@@ -17,20 +17,32 @@ import AwardPopup from "./components/AwardPopup";
 const stintUltraExpanded = Stint_Ultra_Expanded({
   subsets: ["latin"],
   weight: "400",
+  variable: "--font-stint-ultra-expanded",
 });
-const pontanoSans = Pontano_Sans({ subsets: ["latin"], weight: "400" });
-const luxuriousScript = Luxurious_Script({ subsets: ["latin"], weight: "400" });
+const pontanoSans = Pontano_Sans({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-pontano-sans",
+});
+const luxuriousScript = Luxurious_Script({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-luxurious-script",
+});
 const familjenGrotesk = Familjen_Grotesk({
   subsets: ["latin"],
   weight: ["400", "700"],
+  variable: "--font-familjen-grotesk",
 });
 const lobster = Lobster({
   subsets: ["latin"],
   weight: "400",
+  variable: "--font-lobster",
 });
 const passionsConflict = Passions_Conflict({
   subsets: ["latin"],
   weight: "400",
+  variable: "--font-passions-conflict",
 });
 
 export const metadata: Metadata = {
@@ -57,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="ro">
       <body
-        className={`${stintUltraExpanded.className} ${pontanoSans.className} ${luxuriousScript.className} ${familjenGrotesk.className} ${lobster.className} ${passionsConflict.className} flex flex-col min-h-screen`}
+        className={`${stintUltraExpanded.variable} ${pontanoSans.variable} ${luxuriousScript.variable} ${familjenGrotesk.variable} ${lobster.variable} ${passionsConflict.variable} font-pontano-sans flex flex-col min-h-screen`}
       >
         <Menux />
         <Providers>
