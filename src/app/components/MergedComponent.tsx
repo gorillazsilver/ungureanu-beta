@@ -22,6 +22,7 @@ import {
   Icon,
   Divider,
   Badge,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { PiScissors } from "react-icons/pi";
 import { IoShareSocialOutline } from "react-icons/io5";
@@ -44,6 +45,11 @@ const MergedComponents: React.FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const docsRef = useRef<HTMLDivElement>(null);
+
+  const drawerPlacement = useBreakpointValue<"bottom" | "right">({
+    base: "bottom",
+    md: "right",
+  });
 
   const acteNecesare = useMemo(
     () => [
@@ -506,7 +512,7 @@ const MergedComponents: React.FC = () => {
         {/* DRAWER (mobile: bottom, desktop: right) */}
         <Drawer
           isOpen={isOpen}
-          placement={{ base: "bottom", md: "right" }}
+          placement={drawerPlacement ?? "bottom"}
           onClose={onClose}
           finalFocusRef={btnRef}
           size={{ base: "full", md: "xl" }}
