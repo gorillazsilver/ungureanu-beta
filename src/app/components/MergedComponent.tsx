@@ -111,9 +111,7 @@ const MergedComponents: React.FC = () => {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { gsap } = require("gsap");
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { ScrollTrigger } = require("gsap/ScrollTrigger");
     gsap.registerPlugin(ScrollTrigger);
 

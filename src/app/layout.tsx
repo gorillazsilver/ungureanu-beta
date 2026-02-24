@@ -5,6 +5,7 @@ import {
   Luxurious_Script,
   Familjen_Grotesk,
   Lobster,
+  Passions_Conflict,
 } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
@@ -24,6 +25,10 @@ const familjenGrotesk = Familjen_Grotesk({
   weight: ["400", "700"],
 });
 const lobster = Lobster({
+  subsets: ["latin"],
+  weight: "400",
+});
+const passionsConflict = Passions_Conflict({
   subsets: ["latin"],
   weight: "400",
 });
@@ -51,20 +56,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ro">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body
-        className={`${stintUltraExpanded.className} ${pontanoSans.className} ${luxuriousScript.className} ${familjenGrotesk.className} ${lobster.className} flex flex-col min-h-screen`}
+        className={`${stintUltraExpanded.className} ${pontanoSans.className} ${luxuriousScript.className} ${familjenGrotesk.className} ${lobster.className} ${passionsConflict.className} flex flex-col min-h-screen`}
       >
         <Menux />
         <Providers>
