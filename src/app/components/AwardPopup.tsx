@@ -205,7 +205,7 @@ const AwardPopup: React.FC = () => {
                   Inscrie-te la cursul
                 </p>
                 <p className="text-xl sm:text-2xl md:text-3xl font-stint-ultra-expanded text-[#023d82] mt-1 sm:mt-2 leading-tight">
-                  APRILIE - IULIE 2026
+                  SEPTEMBRIE - NOIEMBRIE 2026
                 </p>
               </div>
 

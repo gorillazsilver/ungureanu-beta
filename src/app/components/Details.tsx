@@ -274,9 +274,11 @@ const Details: React.FC = () => {
                       <p className="text-xs uppercase tracking-widest text-white">
                         Perioada curs
                       </p>
+                      {/* Perioada curs: septembrie–noiembrie 2026 */}
                       <p className="mt-1 text-sm sm:text-base text-[#79FD15] text-right font-pontano-sans">
-                        14 <span className="font-extrabold">APRILIE</span> 2026
-                        – 3 <span className="font-extrabold">IULIE</span> 2026
+                        1 <span className="font-extrabold">SEPTEMBRIE</span> 2026
+                        – 23 <span className="font-extrabold">NOIEMBRIE</span>{" "}
+                        2026
                       </p>
                     </div>
 

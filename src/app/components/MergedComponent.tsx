@@ -29,6 +29,7 @@ import { IoShareSocialOutline } from "react-icons/io5";
 import {
   MdOutlineEmojiPeople,
   MdOutlineNotificationImportant,
+  MdLocationOn,
 } from "react-icons/md";
 import { TbZoomQuestion } from "react-icons/tb";
 import { GiTeacher } from "react-icons/gi";
@@ -682,8 +683,10 @@ const MergedComponents: React.FC = () => {
                   px={4}
                   py={3}
                 >
+                  {/* Teorie: 6 ore/săptămână, zilele în funcție de grupe */}
                   <ListIcon as={GiTeacher} color="#79FD15" />
-                  Teorie: marți, miercuri și joi 10:00–15:30
+                  Teorie: 6 ore/săptămână — marți, miercuri sau joi (în
+                  funcție de numărul de grupe)
                 </ListItem>
 
                 <ListItem
@@ -694,8 +697,23 @@ const MergedComponents: React.FC = () => {
                   px={4}
                   py={3}
                 >
+                  {/* Program curs: 12:00–18:00 */}
                   <ListIcon as={PiScissors} color="#79FD15" />
-                  Practică: marți, miercuri, joi 16:00–18:00
+                  Program curs: 12:00 – 18:00
+                </ListItem>
+
+                <ListItem
+                  color="#ededed"
+                  bg="rgba(0,0,0,0.22)"
+                  border="1px solid rgba(255,255,255,0.10)"
+                  borderRadius="16px"
+                  px={4}
+                  py={3}
+                >
+                  {/* Locație practică Pantelimon 10–12 */}
+                  <ListIcon as={MdLocationOn} color="#79FD15" />
+                  Locație practică: Academia Fade Academy Education, Șos.
+                  Pantelimon 10–12 (Mecanică fină, etaj 4)
                 </ListItem>
 
                 <ListItem
