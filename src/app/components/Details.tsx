@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Heading, Highlight, Box } from "@chakra-ui/react";
 import faderImage from "@/images/hero/cip-her.svg";
 import { motion, useReducedMotion } from "framer-motion";
@@ -59,8 +60,10 @@ const Details: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {/* soft glow */}
         <div className="absolute left-1/2 top-12 h-[520px] w-[520px] -translate-x-1/2 rounded-full blur-3xl opacity-25 bg-[#79FD15]" />
+
         {/* blue glow */}
         <div className="absolute -right-24 bottom-0 h-[520px] w-[520px] rounded-full blur-3xl opacity-15 bg-[#0461ab]" />
+
         {/* subtle grid */}
         <div
           className="absolute inset-0 opacity-[0.07]"
@@ -70,8 +73,10 @@ const Details: React.FC = () => {
             backgroundSize: "44px 44px",
           }}
         />
+
         {/* top fade */}
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent" />
+
         {/* bottom fade */}
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" />
       </div>
@@ -145,6 +150,7 @@ const Details: React.FC = () => {
                   ease: "easeInOut",
                 }}
               />
+
               <motion.span
                 aria-hidden="true"
                 className="absolute right-14 top-24 h-1.5 w-1.5 rounded-full bg-white/80"
@@ -159,6 +165,7 @@ const Details: React.FC = () => {
                   delay: 0.3,
                 }}
               />
+
               <motion.span
                 aria-hidden="true"
                 className="absolute right-20 bottom-16 h-2 w-2 rounded-full bg-[#0461ab]"
@@ -218,7 +225,9 @@ const Details: React.FC = () => {
                         'url(\'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="120" height="120" filter="url(%23n)" opacity="0.35"/></svg>\')',
                       backgroundSize: "180px 180px",
                     }}
-                    animate={{ backgroundPosition: ["0px 0px", "180px 180px"] }}
+                    animate={{
+                      backgroundPosition: ["0px 0px", "180px 180px"],
+                    }}
                     transition={{
                       duration: 12,
                       repeat: Infinity,
@@ -227,7 +236,7 @@ const Details: React.FC = () => {
                   />
                 )}
 
-                <Box className="relative p-6 sm:p-8 z-10 w-full">
+                <Box className="relative p-5 sm:p-8 z-10 w-full">
                   <motion.h1
                     variants={item}
                     className="text-5xl sm:text-6xl md:text-7xl text-[#79FD15] mb-5 text-center lg:text-left passions-conflict-regular leading-[0.95] tracking-tight"
@@ -266,6 +275,7 @@ const Details: React.FC = () => {
                     </span>
                   </motion.p>
 
+                  {/* Course period + duration */}
                   <motion.div
                     variants={item}
                     className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3"
@@ -274,11 +284,11 @@ const Details: React.FC = () => {
                       <p className="text-xs uppercase tracking-widest text-white">
                         Perioada curs
                       </p>
-                      {/* Perioada curs: septembrie–noiembrie 2026 */}
+
                       <p className="mt-1 text-sm sm:text-base text-[#79FD15] text-right font-pontano-sans">
-                        1 <span className="font-extrabold">SEPTEMBRIE</span> 2026
-                        – 23 <span className="font-extrabold">NOIEMBRIE</span>{" "}
-                        2026
+                        1 <span className="font-extrabold">SEPTEMBRIE</span>{" "}
+                        2026 – 23{" "}
+                        <span className="font-extrabold">NOIEMBRIE</span> 2026
                       </p>
                     </div>
 
@@ -286,6 +296,7 @@ const Details: React.FC = () => {
                       <p className="text-xs uppercase tracking-widest text-white">
                         Durata totală
                       </p>
+
                       <p className="mt-1 text-sm sm:text-base text-[#79FD15] font-pontano-sans">
                         2 luni jumate /{" "}
                         <span className="font-extrabold">12 săptămâni</span>
@@ -293,7 +304,159 @@ const Details: React.FC = () => {
                     </div>
                   </motion.div>
 
-                  {/* Micro CTA hint (no button, but wow effect) */}
+                  {/* =====================================================
+                      COURSE OPTIONS
+                  ===================================================== */}
+                  <motion.div variants={item} className="mt-7">
+                    {/* Section heading */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-px flex-1 bg-white/10" />
+
+                      <p className="text-[10px] sm:text-xs uppercase tracking-[0.18em] text-white/60 font-pontano-sans whitespace-nowrap">
+                        Alege cursul potrivit
+                      </p>
+
+                      <div className="h-px flex-1 bg-white/10" />
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-3">
+                      {/* GrandMaster Course */}
+                      <Link
+                        href="/curs-frizerie-bucuresti"
+                        aria-label="Vezi detalii despre Curs GrandMaster Ciprian Ungureanu"
+                        className="group/course block rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#79FD15] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                      >
+                        <div className="relative overflow-hidden rounded-xl border border-[#79FD15]/35 bg-[#79FD15]/[0.07] p-4 sm:p-5 transition-all duration-300 group-hover/course:border-[#79FD15]/70 group-hover/course:bg-[#79FD15]/[0.11] group-hover/course:shadow-[0_0_30px_rgba(121,253,21,0.10)]">
+                          {/* subtle accent */}
+                          <div
+                            aria-hidden="true"
+                            className="absolute left-0 top-0 h-full w-1 bg-[#79FD15]"
+                          />
+
+                          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-2">
+                                <span className="inline-flex shrink-0 rounded-full bg-[#79FD15] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-black">
+                                  Premium
+                                </span>
+
+                                <span className="text-[10px] uppercase tracking-widest text-white/50">
+                                  Curs principal
+                                </span>
+                              </div>
+
+                              <h3 className="mt-2 text-lg sm:text-xl font-bold text-white font-pontano-sans leading-tight">
+                                Curs GrandMaster Ciprian Ungureanu
+                              </h3>
+
+                              <p className="mt-1 text-xs sm:text-sm text-white/55 font-pontano-sans">
+                                Formare completă pentru o carieră în frizerie
+                              </p>
+                            </div>
+
+                            <div className="flex items-center justify-between sm:block sm:text-right shrink-0">
+                              <div>
+                                <p className="text-[10px] uppercase tracking-wider text-white/50 font-pontano-sans">
+                                  De la
+                                </p>
+
+                                <p className="text-xl sm:text-2xl font-extrabold text-[#79FD15] font-pontano-sans leading-none">
+                                  5.400 RON
+                                </p>
+
+                                <p className="mt-1 text-[10px] text-white/50 font-pontano-sans">
+                                  Posibilă plată în rate
+                                </p>
+                              </div>
+
+                              <span className="mt-2 inline-flex items-center gap-1.5 text-xs font-bold text-[#79FD15] font-pontano-sans transition-transform duration-300 group-hover/course:translate-x-1">
+                                Vezi detalii
+                                <span
+                                  aria-hidden="true"
+                                  className="text-base leading-none"
+                                >
+                                  →
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+
+                      {/* Master Fade Academy Course */}
+                      <Link
+                        href="/curs-secundar-frizerie"
+                        aria-label="Vezi detalii despre Curs Frizerie Master Fade Academy"
+                        className="group/course block rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#79FD15] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                      >
+                        <div className="relative overflow-hidden rounded-xl border border-white/15 bg-white/[0.035] p-4 sm:p-5 transition-all duration-300 group-hover/course:border-[#79FD15]/45 group-hover/course:bg-white/[0.06] group-hover/course:shadow-[0_0_25px_rgba(121,253,21,0.07)]">
+                          {/* subtle accent */}
+                          <div
+                            aria-hidden="true"
+                            className="absolute left-0 top-0 h-full w-1 bg-white/25 transition-colors duration-300 group-hover/course:bg-[#79FD15]/70"
+                          />
+
+                          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-2">
+                                <span className="inline-flex shrink-0 rounded-full border border-white/15 bg-white/5 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white/70">
+                                  Master
+                                </span>
+
+                                <span className="text-[10px] uppercase tracking-widest text-white/40">
+                                  Fade Academy
+                                </span>
+                              </div>
+
+                              <h3 className="mt-2 text-lg sm:text-xl font-bold text-white font-pontano-sans leading-tight">
+                                Curs Frizerie Master Fade Academy
+                              </h3>
+
+                              <p className="mt-1 text-xs sm:text-sm text-white/55 font-pontano-sans">
+                                O variantă accesibilă pentru începutul în
+                                frizerie
+                              </p>
+                            </div>
+
+                            <div className="flex items-center justify-between sm:block sm:text-right shrink-0">
+                              <div>
+                                <p className="text-[10px] uppercase tracking-wider text-white/50 font-pontano-sans">
+                                  De la
+                                </p>
+
+                                <p className="text-xl sm:text-2xl font-extrabold text-[#79FD15] font-pontano-sans leading-none">
+                                  3.150 RON
+                                </p>
+
+                                <p className="mt-1 text-[10px] text-white/50 font-pontano-sans">
+                                  Posibilă plată în rate
+                                </p>
+                              </div>
+
+                              <span className="mt-2 inline-flex items-center gap-1.5 text-xs font-bold text-white/80 font-pontano-sans transition-all duration-300 group-hover/course:text-[#79FD15] group-hover/course:translate-x-1">
+                                Vezi detalii
+                                <span
+                                  aria-hidden="true"
+                                  className="text-base leading-none"
+                                >
+                                  →
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+
+                    {/* Simple payment explanation */}
+                    <p className="mt-3 px-2 text-center text-[10px] sm:text-xs leading-relaxed text-white/40 font-pontano-sans">
+                      Prețurile afișate sunt prețurile de la plata integrală cu
+                      discount. Pentru plata în rate și toate variantele
+                      disponibile, apasă pe cursul dorit.
+                    </p>
+                  </motion.div>
+
+                  {/* Micro CTA hint */}
                   <motion.div
                     variants={item}
                     className="mt-6 flex items-center justify-center lg:justify-start gap-3"
@@ -302,6 +465,7 @@ const Details: React.FC = () => {
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#79FD15] opacity-60" />
                       <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#79FD15]" />
                     </span>
+
                     <p className="text-xs sm:text-sm text-white/70 font-pontano-sans">
                       Înscrierile sunt deschise — locuri limitate.
                     </p>
